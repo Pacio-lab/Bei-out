@@ -1,11 +1,11 @@
 {
-  "name": "BRIXIAOUT",
+  "name": "BRIXIAOUT - Eventi Brescia",
   "short_name": "BrixiaOut",
-  "start_url": "/index.html",
+  "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#F0F4F8",
   "theme_color": "#002D62",
-  "description": "Il radar definitivo per le serate a Brescia e provincia",
+  "description": "Il radar definitivo per le serate e i locali a Brescia e provincia",
   "icons": [
     {
       "src": "https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=192&q=80",
