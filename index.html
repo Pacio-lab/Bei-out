@@ -28,7 +28,6 @@
             --maps-red: #EA4335;
         }
 
-        /* Variabili Tema Scuro (Night Mode) */
         body.dark-mode {
             --light-bg: #0f172a;
             --text-dark: #f8fafc;
@@ -48,7 +47,7 @@
         body {
             background-color: var(--light-bg);
             color: var(--text-dark);
-            padding-bottom: 40px;
+            padding-bottom: 30px;
         }
 
         header {
@@ -62,7 +61,6 @@
             position: relative;
         }
 
-        /* Barra superiore con Dark Mode Toggle */
         .top-bar {
             display: flex;
             justify-content: flex-end;
@@ -83,7 +81,6 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.1);
         }
 
-        /* Mascotte Cartoon */
         .mascot-container {
             display: flex;
             justify-content: center;
@@ -132,7 +129,6 @@
             margin-top: 4px;
         }
 
-        /* Widget Live (Meteo & Tramonto) */
         .live-widget {
             display: flex;
             justify-content: center;
@@ -153,7 +149,6 @@
             padding: 0 15px;
         }
 
-        /* Sezione Filtri a scorrimento (Zone & Vibe) */
         .filter-section-title {
             font-size: 0.8rem;
             font-weight: 700;
@@ -194,7 +189,6 @@
             color: var(--pure-white);
         }
 
-        /* Card Eventi */
         .event-card {
             background: var(--card-bg);
             border-radius: 16px;
@@ -266,7 +260,6 @@
             gap: 6px;
         }
 
-        /* Tag Musica & Hype live */
         .tags-row {
             display: flex;
             gap: 6px;
@@ -305,7 +298,6 @@
             line-height: 1.4;
         }
 
-        /* Pulsantiera Azioni Tecnologiche */
         .action-buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -349,9 +341,68 @@
             grid-column: span 2;
         }
 
+        /* Sezione Monetizzazione & Footer Ads */
+        .ads-footer-container {
+            max-width: 600px;
+            margin: 30px auto 10px auto;
+            padding: 0 15px;
+        }
+
+        .ad-banner {
+            background: var(--card-bg);
+            border: 2px dashed var(--primary-blue);
+            border-radius: 14px;
+            padding: 14px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+            min-height: 90px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .ad-tag {
+            position: absolute;
+            top: 6px;
+            right: 8px;
+            font-size: 0.6rem;
+            text-transform: uppercase;
+            background: rgba(0,0,0,0.1);
+            padding: 2px 6px;
+            border-radius: 4px;
+            font-weight: 700;
+            opacity: 0.7;
+        }
+
+        .ad-content {
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-top: 4px;
+        }
+
+        .ad-content span {
+            color: var(--primary-blue);
+            font-weight: 800;
+        }
+
+        .ad-link {
+            display: inline-block;
+            margin-top: 6px;
+            font-size: 0.75rem;
+            color: #0ea5e9;
+            text-decoration: none;
+            font-weight: 700;
+        }
+
+        .ad-link:hover {
+            text-decoration: underline;
+        }
+
         footer {
             text-align: center;
-            margin-top: 30px;
+            margin-top: 20px;
             opacity: 0.6;
             font-size: 0.78rem;
         }
@@ -359,7 +410,6 @@
 </head>
 <body>
 
-    <!-- Top Bar con Dark Mode Toggle -->
     <div class="top-bar">
         <button class="theme-toggle-btn" onclick="toggleDarkMode()">
             <i class="fa-solid fa-moon" id="theme-icon"></i> Modalità Scura
@@ -391,7 +441,6 @@
         <h1>BRIXIA<span>OUT</span></h1>
         <p>Il radar intelligente per le serate a Brescia e provincia</p>
         
-        <!-- Live Widget Meteo & Tramonto -->
         <div class="live-widget">
             <span><i class="fa-solid fa-temperature-three-quarters"></i> Brescia 22°C</span>
             <span><i class="fa-solid fa-sun"></i> Tramonto 20:15</span>
@@ -400,7 +449,6 @@
 
     <div class="container">
         
-        <!-- Filtri per Zona -->
         <div class="filter-section-title">📍 Scegli la Zona</div>
         <div class="filters">
             <button class="filter-btn active" onclick="filterEvents('all', this, 'zone')">Tutti</button>
@@ -410,7 +458,6 @@
             <button class="filter-btn" onclick="filterEvents('garda', this, 'zone')">Lago di Garda</button>
         </div>
 
-        <!-- Filtri per Vibe Musicale -->
         <div class="filter-section-title">🎵 Genere Musicale & Vibe</div>
         <div class="filters">
             <button class="filter-btn active" onclick="filterEvents('all', this, 'music')">Qualsiasi Vibe</button>
@@ -419,7 +466,6 @@
             <button class="filter-btn" onclick="filterEvents('aperitivo', this, 'music')">Aperitivo & Chill</button>
         </div>
 
-        <!-- Lista Eventi / Locali -->
         <div id="events-list">
             
             <!-- Arnold's Cafè -->
@@ -450,165 +496,6 @@
                         <i class="fa-brands fa-instagram"></i> Vedi Locandine su IG
                     </a>
                     <button class="btn-action share-story-btn" onclick="shareStory('Arnold\'s Cafè', 'Piazzale Arnaldo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Arnold's Restaurant -->
-            <div class="event-card" data-category="arnaldo" data-music="aperitivo">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-utensils"></i> Brescia Centro</span>
-                    <img src="https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=600&q=80" alt="Arnold's Restaurant">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Arnold's Restaurant</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Cena & Wine</span>
-                        <span class="music-tag">Chill</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 85 persone interessate stasera</div>
-                    <p class="event-desc">Cene di qualità e atmosfera frizzante prima di tuffarsi nella notte bresciana.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Prenotazione%20cena%20Arnold's%20Restaurant" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Prenota Cena
-                        </a>
-                        <a href="https://maps.google.com/?q=Piazzale+Arnaldo+Brescia" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/arnolds_restaurant_brescia" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Scopri il Menù su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Arnold\'s Restaurant', 'Piazzale Arnaldo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Vita -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-fire"></i> Brescia Centro</span>
-                    <img src="https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=600&q=80" alt="Vita Brescia">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Vita Brescia</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Commerciale</span>
-                        <span class="music-tag">Social</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 160 persone interessate stasera</div>
-                    <p class="event-desc">Musica, socialità e drink ricercati per vivere appieno il weekend in centro.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Info%20liste%20Vita%20Brescia" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Tavolo / Lista
-                        </a>
-                        <a href="https://maps.google.com/?q=Vita+Brescia+Piazzale+Arnaldo" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/vita_brescia" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Guarda le Stories su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Vita Brescia', 'Piazzale Arnaldo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Granaio -->
-            <div class="event-card" data-category="arnaldo" data-music="aperitivo">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-wine-glass"></i> Brescia Centro</span>
-                    <img src="https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=600&q=80" alt="Granaio Brescia">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Granaio Brescia</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Aperitivo Glam</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 95 persone interessate stasera</div>
-                    <p class="event-desc">Location d'impatto e aperitivi alla moda nel salotto buono della movida.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Info%20Granaio%20Brescia" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Info & Tavoli
-                        </a>
-                        <a href="https://maps.google.com/?q=Granaio+Brescia+Piazzale+Arnaldo" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/granaiobrescia" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Scopri le Serate su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Granaio Brescia', 'Piazzale Arnaldo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Marlin -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-glass-water"></i> Brescia Centro</span>
-                    <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187?auto=format&fit=crop&w=600&q=80" alt="Marlin Brescia">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Marlin Brescia</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Cocktail Bar</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 110 persone interessate stasera</div>
-                    <p class="event-desc">Cocktail bar dinamico e punto d'incontro immancabile per il pre-serata.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Info%20Marlin%20Brescia" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Contatta
-                        </a>
-                        <a href="https://maps.google.com/?q=Marlin+Brescia" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/marlinbrescia" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Guarda gli Eventi su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Marlin Brescia', 'Piazzale Arnaldo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Contadi Castaldi -->
-            <div class="event-card" data-category="franciacorta" data-music="aperitivo">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-wine-bottle"></i> Franciacorta</span>
-                    <span class="trend-badge">✨ Wine Vibe</span>
-                    <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80" alt="Contadi Castaldi">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Contadi Castaldi & Cantine Franciacorta</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Adro / Franciacorta (BS)</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Degustazione</span>
-                        <span class="music-tag">Sunset Chill</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 70 persone interessate stasera</div>
-                    <p class="event-desc">Aperitivi d'élite tra i filari, degustazioni di bollicine iconiche ed eventi esclusivi.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Info%20degustazioni%20Franciacorta" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Prenota Tasting
-                        </a>
-                        <a href="https://maps.google.com/?q=Contadi+Castaldi+Adro" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/contadicastaldi" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Scopri Eventi & Cantine su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Contadi Castaldi', 'Franciacorta')">
                         <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
                     </button>
                 </div>
@@ -672,7 +559,7 @@
                         </a>
                     </div>
                     <a href="https://www.instagram.com/cocobeach_club" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Vedi Locandine su IG[span_3](start_span)[span_3](end_span)
+                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG[span_3](start_span)[span_3](end_span)
                     </a>
                     <button class="btn-action share-story-btn" onclick="shareStory('Coco Beach Club', 'Lago di Garda')">
                         <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
@@ -683,17 +570,70 @@
         </div>
     </div>
 
+    <!-- Banner Pubblicitario Dinamico (Monetizzazione Footer) -->
+    <div class="ads-footer-container">
+        <div class="ad-banner" id="dynamic-ad-banner">
+            <span class="ad-tag">Partner Sponsor</span>
+            <div class="ad-content" id="ad-text">Caricamento sponsor...</div>
+            <a href="#" class="ad-link" id="ad-link" target="_blank">Scopri l'offerta &rarr;</a>
+        </div>
+    </div>
+
     <footer>
-        <p>&copy; 2026 BRIXIAOUT App - Viviti Brescia e Provincia</p>
+        <p>&copy; 2026 BRIXIAOUT App - Tutti i diritti riservati</p>
     </footer>
 
     <script>
-        // Stato corrente dei filtri
+        // Sistema di Rotazione Annunci Pubblicitari (Simulazione Monetizzazione)
+        const adsPool = [
+            {
+                text: "🚗 <span>Gruppo Bossoni Auto</span>: Gamma Fiat & Jeep per i tuoi weekend in Franciacorta e sui laghi. Passa in concessionaria a Brescia!",
+                link: "https://www.gruppobossoni.it"
+            },
+            {
+                text: "⚡ <span>Brescia Mobilità</span>: Muoviti sicuro per la notte! Metro e bus estesi per Piazzale Arnaldo e provincia.",
+                link: "https://www.bresciamobilita.it"
+            },
+            {
+                text: "🍷 <span>Consorzio Franciacorta</span>: Vivi le bollicine più famose d'Italia. Prenota il tuo tour in cantina questo weekend.",
+                link: "https://www.franciacorta.net"
+            },
+            {
+                text: "🏎️ <span>Gruppo Bossoni Outlet</span>: Le migliori auto aziendali e KM0 per giovani driver a Brescia, Cremona e Mantova.",
+                link: "https://www.gruppobossoni.it"
+            }
+        ];
+
+        let currentAdIndex = 0;
+
+        function rotateAds() {
+            const adTextEl = document.getElementById('ad-text');
+            const adLinkEl = document.getElementById('ad-link');
+            
+            // Effetto dissolvenza minima
+            const banner = document.getElementById('dynamic-ad-banner');
+            banner.style.opacity = '0.4';
+
+            setTimeout(() => {
+                const currentAd = adsPool[currentAdIndex];
+                adTextEl.innerHTML = currentAd.text;
+                adLinkEl.href = currentAd.link;
+                banner.style.opacity = '1';
+
+                currentAdIndex = (currentAdIndex + 1) % adsPool.length;
+            }, 300);
+        }
+
+        // Avvia la rotazione ogni 4 secondi
+        setInterval(rotateAds, 4000);
+        window.onload = rotateAds;
+
+
+        // Gestione Filtri
         let currentZone = 'all';
         let currentMusic = 'all';
 
         function filterEvents(value, btn, type) {
-            // Gestione attiva pulsanti nello stesso gruppo
             const parentContainer = btn.parentElement;
             parentContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
@@ -701,7 +641,6 @@
             if (type === 'zone') currentZone = value;
             if (type === 'music') currentMusic = value;
 
-            // Logica di filtraggio combinata (Zona + Genere Musicale)
             const cards = document.querySelectorAll('.event-card');
             cards.forEach(card => {
                 const cardZone = card.dataset.category;
@@ -718,7 +657,7 @@
             });
         }
 
-        // Funzione Dark Mode Toggle
+        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             const icon = document.getElementById('theme-icon');
@@ -731,7 +670,7 @@
             }
         }
 
-        // Funzione Condividi in Story (Copia testo rapido per IG / TikTok)
+        // Condivisione Story
         function shareStory(clubName, zone) {
             const shareText = `Stasera si va da ${clubName} (${zone})! 🔥 Scopri gli eventi su BRIXIAOUT 🚀`;
             if (navigator.clipboard) {
@@ -743,7 +682,7 @@
             }
         }
 
-        // Registrazione Service Worker PWA
+        // Service Worker PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
