@@ -7,6 +7,7 @@
     
     <!-- PWA Meta Tags -->
     <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" href="./icon-512.png">
     <meta name="theme-color" content="#002D62">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
@@ -341,7 +342,6 @@
             grid-column: span 2;
         }
 
-        /* Sezione Monetizzazione & Footer Ads */
         .ads-footer-container {
             max-width: 600px;
             margin: 30px auto 10px auto;
@@ -584,7 +584,6 @@
     </footer>
 
     <script>
-        // Sistema di Rotazione Annunci Pubblicitari (Simulazione Monetizzazione)
         const adsPool = [
             {
                 text: "🚗 <span>Gruppo Bossoni Auto</span>: Gamma Fiat & Jeep per i tuoi weekend in Franciacorta e sui laghi. Passa in concessionaria a Brescia!",
@@ -609,8 +608,6 @@
         function rotateAds() {
             const adTextEl = document.getElementById('ad-text');
             const adLinkEl = document.getElementById('ad-link');
-            
-            // Effetto dissolvenza minima
             const banner = document.getElementById('dynamic-ad-banner');
             banner.style.opacity = '0.4';
 
@@ -624,12 +621,9 @@
             }, 300);
         }
 
-        // Avvia la rotazione ogni 4 secondi
         setInterval(rotateAds, 4000);
         window.onload = rotateAds;
 
-
-        // Gestione Filtri
         let currentZone = 'all';
         let currentMusic = 'all';
 
@@ -657,7 +651,6 @@
             });
         }
 
-        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             const icon = document.getElementById('theme-icon');
@@ -670,7 +663,6 @@
             }
         }
 
-        // Condivisione Story
         function shareStory(clubName, zone) {
             const shareText = `Stasera si va da ${clubName} (${zone})! 🔥 Scopri gli eventi su BRIXIAOUT 🚀`;
             if (navigator.clipboard) {
@@ -682,7 +674,6 @@
             }
         }
 
-        // Service Worker PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
