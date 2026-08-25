@@ -342,62 +342,90 @@
             grid-column: span 2;
         }
 
+        /* ── SEZIONE SPONSOR NEL FOOTER CON IMMAGINI REALI ── */
         .ads-footer-container {
             max-width: 600px;
             margin: 30px auto 10px auto;
             padding: 0 15px;
         }
 
-        .ad-banner {
+        .ad-card {
             background: var(--card-bg);
-            border: 2px dashed var(--primary-blue);
-            border-radius: 14px;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+            border: 2px solid rgba(0, 45, 98, 0.15);
+            position: relative;
+        }
+
+        .ad-img-wrapper {
+            position: relative;
+            height: 130px;
+            background-color: #111;
+        }
+
+        .ad-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.85;
+        }
+
+        .ad-sponsor-badge {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: rgba(0, 0, 0, 0.75);
+            color: #ffcc00;
+            padding: 3px 8px;
+            font-size: 0.65rem;
+            font-weight: 800;
+            border-radius: 6px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            backdrop-filter: blur(4px);
+        }
+
+        .ad-body {
             padding: 14px;
             text-align: center;
-            position: relative;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-            min-height: 90px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
 
-        .ad-tag {
-            position: absolute;
-            top: 6px;
-            right: 8px;
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            background: rgba(0,0,0,0.1);
-            padding: 2px 6px;
-            border-radius: 4px;
-            font-weight: 700;
-            opacity: 0.7;
-        }
-
-        .ad-content {
-            font-size: 0.85rem;
-            font-weight: 600;
-            margin-top: 4px;
-        }
-
-        .ad-content span {
-            color: var(--primary-blue);
+        .ad-title {
+            font-size: 1.05rem;
             font-weight: 800;
+            color: var(--primary-blue);
+            margin-bottom: 4px;
         }
 
-        .ad-link {
-            display: inline-block;
-            margin-top: 6px;
-            font-size: 0.75rem;
-            color: #0ea5e9;
+        body.dark-mode .ad-title {
+            color: #38bdf8;
+        }
+
+        .ad-text {
+            font-size: 0.82rem;
+            opacity: 0.85;
+            margin-bottom: 12px;
+            line-height: 1.35;
+        }
+
+        .ad-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            background: var(--primary-blue);
+            color: white;
             text-decoration: none;
+            padding: 8px 18px;
+            border-radius: 10px;
+            font-size: 0.78rem;
             font-weight: 700;
+            transition: opacity 0.2s;
         }
 
-        .ad-link:hover {
-            text-decoration: underline;
+        .ad-cta-btn:hover {
+            opacity: 0.9;
         }
 
         footer {
@@ -516,7 +544,7 @@
                         <span class="music-tag">Lago</span>
                     </div>
                     <div class="hype-counter"><i class="fa-solid fa-fire"></i> 180 persone interessate stasera</div>
-                    <p class="event-desc">Il locale cult sul Lago d'Iseo per aperitivi al tramonto, musica e serate in riva all'acqua[span_0](start_span)[span_0](end_span).</p>
+                    <p class="event-desc">Il locale cult sul Lago d'Iseo per aperitivi al tramonto, musica e serate in riva all'acqua.</p>
                     <div class="action-buttons">
                         <a href="https://wa.me/?text=Info%20tavoli%20Darsena21" target="_blank" class="btn-action whatsapp-btn">
                             <i class="fa-brands fa-whatsapp"></i> Prenota Tavolo
@@ -526,7 +554,7 @@
                         </a>
                     </div>
                     <a href="https://www.instagram.com/darsena21" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Guarda Locandine su IG[span_1](start_span)[span_1](end_span)
+                        <i class="fa-brands fa-instagram"></i> Guarda Locandine su IG
                     </a>
                     <button class="btn-action share-story-btn" onclick="shareStory('Darsena21', 'Lago d\'Iseo')">
                         <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
@@ -549,7 +577,7 @@
                         <span class="music-tag">Dinner Show</span>
                     </div>
                     <div class="hype-counter"><i class="fa-solid fa-fire"></i> 230 persone interessate stasera</div>
-                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set[span_2](start_span)[span_2](end_span).</p>
+                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set.</p>
                     <div class="action-buttons">
                         <a href="https://wa.me/?text=Info%20tavoli%20Coco%20Beach" target="_blank" class="btn-action whatsapp-btn">
                             <i class="fa-brands fa-whatsapp"></i> Tavoli & Liste
@@ -559,7 +587,7 @@
                         </a>
                     </div>
                     <a href="https://www.instagram.com/cocobeach_club" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG[span_3](start_span)[span_3](end_span)
+                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG
                     </a>
                     <button class="btn-action share-story-btn" onclick="shareStory('Coco Beach Club', 'Lago di Garda')">
                         <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
@@ -570,12 +598,18 @@
         </div>
     </div>
 
-    <!-- Banner Pubblicitario Dinamico (Monetizzazione Footer) -->
+    <!-- Banner Sponsor Dinamico con Immagini Reali (Footer) -->
     <div class="ads-footer-container">
-        <div class="ad-banner" id="dynamic-ad-banner">
-            <span class="ad-tag">Partner Sponsor</span>
-            <div class="ad-content" id="ad-text">Caricamento sponsor...</div>
-            <a href="#" class="ad-link" id="ad-link" target="_blank">Scopri l'offerta &rarr;</a>
+        <div class="ad-card" id="dynamic-ad-card">
+            <div class="ad-img-wrapper">
+                <span class="ad-sponsor-badge"><i class="fa-solid fa-star"></i> Sponsor Ufficiale</span>
+                <img id="ad-img" src="" alt="Sponsor Image">
+            </div>
+            <div class="ad-body">
+                <h4 class="ad-title" id="ad-title">Caricamento...</h4>
+                <p class="ad-text" id="ad-text">Caricamento offerta...</p>
+                <a href="#" class="ad-cta-btn" id="ad-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Scopri l'offerta</a>
+            </div>
         </div>
     </div>
 
@@ -584,21 +618,30 @@
     </footer>
 
     <script>
+        // Pool di Sponsor con immagini reali (Gruppo Bossoni, Franciacorta, Brescia Mobilità)
         const adsPool = [
             {
-                text: "🚗 <span>Gruppo Bossoni Auto</span>: Gamma Fiat & Jeep per i tuoi weekend in Franciacorta e sui laghi. Passa in concessionaria a Brescia!",
+                title: "Gruppo Bossoni Auto",
+                text: "Gamma Fiat, Jeep & Alfa Romeo ideale per i tuoi weekend in Franciacorta e sui laghi. Passa in concessionaria a Brescia!",
+                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
                 link: "https://www.gruppobossoni.it"
             },
             {
-                text: "⚡ <span>Brescia Mobilità</span>: Muoviti sicuro per la notte! Metro e bus estesi per Piazzale Arnaldo e provincia.",
+                title: "Brescia Mobilità - Night Line",
+                text: "Muoviti sicuro in centro e verso Piazzale Arnaldo. Metro e bus potenziati per le tue serate del weekend.",
+                img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80",
                 link: "https://www.bresciamobilita.it"
             },
             {
-                text: "🍷 <span>Consorzio Franciacorta</span>: Vivi le bollicine più famose d'Italia. Prenota il tuo tour in cantina questo weekend.",
+                title: "Consorzio Franciacorta",
+                text: "Vivi l'eleganza delle bollicine più famose d'Italia. Prenota il tuo tour esclusivo tra i filari.",
+                img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80",
                 link: "https://www.franciacorta.net"
             },
             {
-                text: "🏎️ <span>Gruppo Bossoni Outlet</span>: Le migliori auto aziendali e KM0 per giovani driver a Brescia, Cremona e Mantova.",
+                title: "Gruppo Bossoni Outlet KM0",
+                text: "Le migliori auto aziendali e KM0 selezionate per i giovani driver di Brescia, Cremona e Mantova.",
+                img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80",
                 link: "https://www.gruppobossoni.it"
             }
         ];
@@ -606,24 +649,32 @@
         let currentAdIndex = 0;
 
         function rotateAds() {
+            const adTitleEl = document.getElementById('ad-title');
             const adTextEl = document.getElementById('ad-text');
+            const adImgEl = document.getElementById('ad-img');
             const adLinkEl = document.getElementById('ad-link');
-            const banner = document.getElementById('dynamic-ad-banner');
-            banner.style.opacity = '0.4';
+            
+            const card = document.getElementById('dynamic-ad-card');
+            card.style.opacity = '0.3';
 
             setTimeout(() => {
                 const currentAd = adsPool[currentAdIndex];
-                adTextEl.innerHTML = currentAd.text;
+                adTitleEl.textContent = currentAd.title;
+                adTextEl.textContent = currentAd.text;
+                adImgEl.src = currentAd.img;
                 adLinkEl.href = currentAd.link;
-                banner.style.opacity = '1';
+                card.style.opacity = '1';
 
                 currentAdIndex = (currentAdIndex + 1) % adsPool.length;
             }, 300);
         }
 
-        setInterval(rotateAds, 4000);
+        // Rotazione automatica degli sponsor ogni 4,5 secondi
+        setInterval(rotateAds, 4500);
         window.onload = rotateAds;
 
+
+        // Gestione filtri eventi
         let currentZone = 'all';
         let currentMusic = 'all';
 
@@ -651,6 +702,7 @@
             });
         }
 
+        // Dark Mode Toggle
         function toggleDarkMode() {
             document.body.classList.toggle('dark-mode');
             const icon = document.getElementById('theme-icon');
@@ -663,6 +715,7 @@
             }
         }
 
+        // Condivisione Story
         function shareStory(clubName, zone) {
             const shareText = `Stasera si va da ${clubName} (${zone})! 🔥 Scopri gli eventi su BRIXIAOUT 🚀`;
             if (navigator.clipboard) {
@@ -674,6 +727,7 @@
             }
         }
 
+        // Service Worker PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
