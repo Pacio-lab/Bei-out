@@ -24,6 +24,8 @@
             --light-bg: #F0F4F8;
             --text-dark: #1A1A1A;
             --card-bg: #FFFFFF;
+            --whatsapp-green: #25D366;
+            --maps-red: #EA4335;
         }
 
         * {
@@ -143,6 +145,18 @@
             backdrop-filter: blur(4px);
         }
 
+        .trend-badge {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            background: rgba(255, 69, 0, 0.9);
+            color: white;
+            padding: 4px 8px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            border-radius: 8px;
+        }
+
         .event-content {
             padding: 18px;
         }
@@ -170,24 +184,43 @@
             line-height: 1.4;
         }
 
-        .insta-btn {
+        /* Pulsantiera Azioni Rapide */
+        .action-buttons {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+
+        .btn-action {
             display: inline-flex;
             align-items: center;
-            gap: 8px;
-            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
-            color: white;
+            gap: 6px;
             text-decoration: none;
-            padding: 10px 16px;
+            padding: 9px 12px;
             border-radius: 10px;
             font-weight: 600;
-            font-size: 0.85rem;
-            width: 100%;
+            font-size: 0.8rem;
             justify-content: center;
+            color: white;
             transition: opacity 0.2s;
         }
 
-        .insta-btn:hover {
+        .btn-action:hover {
             opacity: 0.9;
+        }
+
+        .insta-btn {
+            background: linear-gradient(45deg, #f09433, #e6683c, #dc2743, #cc2366, #bc1888);
+            grid-column: span 2;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--whatsapp-green);
+        }
+
+        .maps-btn {
+            background-color: var(--maps-red);
         }
 
         footer {
@@ -206,34 +239,44 @@
     </header>
 
     <div class="container">
-        <!-- Filtri per zona -->
+        <!-- Filtri per zona aggiornati -->
         <div class="filters">
             <button class="filter-btn active" onclick="filterEvents('all')">Tutti</button>
             <button class="filter-btn" onclick="filterEvents('arnaldo')">P.le Arnaldo & Centro</button>
-            <button class="filter-btn" onclick="filterEvents('garda')">Lago di Garda</button>
+            <button class="filter-btn" onclick="filterEvents('franciacorta')">Franciacorta</button>
             <button class="filter-btn" onclick="filterEvents('iseo')">Lago d'Iseo</button>
+            <button class="filter-btn" onclick="filterEvents('garda')">Lago di Garda</button>
         </div>
 
         <!-- Lista Eventi / Locali -->
         <div id="events-list">
             
-            <!-- Arnold's Cafè -->
+            <!-- Arnold's Cafè (Centro) -->
             <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
+                    <span class="trend-badge">🔥 Hot Spot</span>
                     <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" alt="Arnold's Cafè">
                 </div>
                 <div class="event-content">
                     <h3 class="event-title">Arnold's Cafè</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
                     <p class="event-desc">Il punto di riferimento per l'aperitivo e la movida in Piazzale Arnaldo. Dj set e cocktail unici.</p>
-                    <a href="https://www.instagram.com/arnolds.cafe" target="_blank" class="insta-btn">
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Ciao,%20vorrei%20informazioni%20per%20un%20tavolo%20all'Arnolds%20Cafè" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Tavolo / Lista
+                        </a>
+                        <a href="https://maps.google.com/?q=Piazzale+Arnaldo+Brescia" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/arnolds.cafe" target="_blank" class="btn-action insta-btn">
                         <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG
                     </a>
                 </div>
             </div>
 
-            <!-- Arnold's Restaurant -->
+            <!-- Arnold's Restaurant (Centro) -->
             <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-utensils"></i> Brescia Centro</span>
@@ -243,13 +286,21 @@
                     <h3 class="event-title">Arnold's Restaurant</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
                     <p class="event-desc">Cene di qualità e atmosfera frizzante prima di tuffarsi nella notte bresciana.</p>
-                    <a href="https://www.instagram.com/arnolds_restaurant_brescia" target="_blank" class="insta-btn">
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Ciao,%20vorrei%20prenotare%20un%20tavolo%20per%20cena%20all'Arnolds%20Restaurant" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Prenota Cena
+                        </a>
+                        <a href="https://maps.google.com/?q=Piazzale+Arnaldo+Brescia" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/arnolds_restaurant_brescia" target="_blank" class="btn-action insta-btn">
                         <i class="fa-brands fa-instagram"></i> Scopri il Menù e gli Eventi su IG
                     </a>
                 </div>
             </div>
 
-            <!-- Vita -->
+            <!-- Vita (Centro) -->
             <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-fire"></i> Brescia Centro</span>
@@ -259,13 +310,21 @@
                     <h3 class="event-title">Vita Brescia</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
                     <p class="event-desc">Musica, socialità e drink ricercati per vivere appieno il weekend in centro.</p>
-                    <a href="https://www.instagram.com/vita_brescia" target="_blank" class="insta-btn">
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Info%20liste%20e%20tavoli%20Vita%20Brescia" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Tavolo / Lista
+                        </a>
+                        <a href="https://maps.google.com/?q=Vita+Brescia+Piazzale+Arnaldo" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/vita_brescia" target="_blank" class="btn-action insta-btn">
                         <i class="fa-brands fa-instagram"></i> Guarda le Stories su IG
                     </a>
                 </div>
             </div>
 
-            <!-- Granaio -->
+            <!-- Granaio (Centro) -->
             <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-wine-glass"></i> Brescia Centro</span>
@@ -275,13 +334,21 @@
                     <h3 class="event-title">Granaio Brescia</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
                     <p class="event-desc">Location d'impatto e aperitivi alla moda nel salotto buono della movida.</p>
-                    <a href="https://www.instagram.com/granaiobrescia" target="_blank" class="insta-btn">
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Info%20prenotazione%20Granaio%20Brescia" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Info & Tavoli
+                        </a>
+                        <a href="https://maps.google.com/?q=Granaio+Brescia+Piazzale+Arnaldo" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/granaiobrescia" target="_blank" class="btn-action insta-btn">
                         <i class="fa-brands fa-instagram"></i> Scopri le Serate su IG
                     </a>
                 </div>
             </div>
 
-            <!-- Marlin -->
+            <!-- Marlin (Centro) -->
             <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-glass-water"></i> Brescia Centro</span>
@@ -291,8 +358,66 @@
                     <h3 class="event-title">Marlin Brescia</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
                     <p class="event-desc">Cocktail bar dinamico e punto d'incontro immancabile per il pre-serata.</p>
-                    <a href="https://www.instagram.com/marlinbrescia" target="_blank" class="insta-btn">
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Info%20Marlin%20Brescia" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Contatta
+                        </a>
+                        <a href="https://maps.google.com/?q=Marlin+Brescia" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/marlinbrescia" target="_blank" class="btn-action insta-btn">
                         <i class="fa-brands fa-instagram"></i> Guarda gli Eventi su IG
+                    </a>
+                </div>
+            </div>
+
+            <!-- Contadi Castaldi (Franciacorta) -->
+            <div class="event-card" data-category="franciacorta">
+                <div class="event-img-container">
+                    <span class="zone-badge"><i class="fa-solid fa-wine-bottle"></i> Franciacorta</span>
+                    <span class="trend-badge">✨ Wine Vibe</span>
+                    <img src="https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80" alt="Contadi Castaldi">
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Contadi Castaldi & Cantine Franciacorta</h3>
+                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Adro / Franciacorta (BS)</p>
+                    <p class="event-desc">Aperitivi d'élite tra i filari, degustazioni di bollicine iconiche ed eventi esclusivi nel cuore della Franciacorta.</p>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Info%20degustazioni%20e%20eventi%20Franciacorta" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Prenota Tasting
+                        </a>
+                        <a href="https://maps.google.com/?q=Contadi+Castaldi+Adro" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/contadicastaldi" target="_blank" class="btn-action insta-btn">
+                        <i class="fa-brands fa-instagram"></i> Scopri Eventi & Cantine su IG
+                    </a>
+                </div>
+            </div>
+
+            <!-- Darsena 21 (Lago d'Iseo) -->
+            <div class="event-card" data-category="iseo">
+                <div class="event-img-container">
+                    <span class="zone-badge"><i class="fa-solid fa-sailboat"></i> Lago d'Iseo</span>
+                    <span class="trend-badge">🔥 Top Location</span>
+                    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Darsena 21 Iseo">
+                </div>
+                <div class="event-content">
+                    <h3 class="event-title">Darsena21</h3>
+                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Lago d'Iseo (BS)</p>
+                    <p class="event-desc">Il locale cult sul Lago d'Iseo per aperitivi al tramonto, musica e serate uniche in riva all'acqua[span_1](start_span)[span_1](end_span).</p>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Info%20tavoli%20Darsena21%20Iseo" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Prenota Tavolo
+                        </a>
+                        <a href="https://maps.google.com/?q=Darsena21+Iseo" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/darsena21" target="_blank" class="btn-action insta-btn">
+                        <i class="fa-brands fa-instagram"></i> Guarda Locandine su IG[span_2](start_span)[span_2](end_span)
                     </a>
                 </div>
             </div>
@@ -301,30 +426,23 @@
             <div class="event-card" data-category="garda">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-water"></i> Lago di Garda</span>
+                    <span class="trend-badge">🌊 Must Visit</span>
                     <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Coco Beach Club">
                 </div>
                 <div class="event-content">
                     <h3 class="event-title">Coco Beach Club</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Desenzano del Garda (BS)</p>
-                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set della riviera[span_1](start_span)[span_1](end_span).</p>
-                    <a href="https://www.instagram.com/cocobeach_club" target="_blank" class="insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG
-                    </a>
-                </div>
-            </div>
-
-            <!-- Sunset Lounge Iseo (Lago d'Iseo) -->
-            <div class="event-card" data-category="iseo">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-sailboat"></i> Lago d'Iseo</span>
-                    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Lago d'Iseo Club">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Sunset Lounge Iseo</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Lungolago Marconi, Iseo (BS)</p>
-                    <p class="event-desc">Aperitivo vista laghetto, musica elettronica soft e house commerciale per il weekend.</p>
-                    <a href="https://www.instagram.com" target="_blank" class="insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Guarda le Stories del Locale
+                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set della riviera[span_3](start_span)[span_3](end_span).</p>
+                    <div class="action-buttons">
+                        <a href="https://wa.me/?text=Info%20tavoli%20e%20liste%20Coco%20Beach%20Desenzano" target="_blank" class="btn-action whatsapp-btn">
+                            <i class="fa-brands fa-whatsapp"></i> Tavoli & Liste
+                        </a>
+                        <a href="https://maps.google.com/?q=Coco+Beach+Club+Desenzano+del+Garda" target="_blank" class="btn-action maps-btn">
+                            <i class="fa-solid fa-map-location-dot"></i> Mappa
+                        </a>
+                    </div>
+                    <a href="https://www.instagram.com/cocobeach_club" target="_blank" class="btn-action insta-btn">
+                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG[span_4](start_span)[span_4](end_span)
                     </a>
                 </div>
             </div>
