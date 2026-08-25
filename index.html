@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="it">
+<html lang="it" id="app-html">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -64,10 +64,40 @@
 
         .top-bar {
             display: flex;
-            justify-content: flex-end;
+            justify-content: space-between; /* Modificato per spaziare lingua e tema */
             max-width: 600px;
             margin: 0 auto 5px auto;
             padding: 0 15px;
+            align-items: center;
+        }
+
+        /* Stile Selettore Lingua */
+        .language-selector {
+            background: var(--card-bg);
+            color: var(--text-dark);
+            border: none;
+            padding: 6px 10px;
+            border-radius: 15px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+            appearance: none; /* Rimuove freccia di default */
+            background-image: url('data:image/svg+xml;utf8,<svg fill="%231A1A1A" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+            background-repeat: no-repeat;
+            background-position-x: right;
+            background-position-y: 50%;
+            background-size: 16px;
+            padding-right: 24px; /* Spazio per la freccia */
+        }
+
+        body.dark-mode .language-selector {
+             background-image: url('data:image/svg+xml;utf8,<svg fill="%23F8FAFC" height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M7 10l5 5 5-5z"/></svg>');
+        }
+
+        .language-selector:focus {
+            outline: none;
+            box-shadow: 0 0 0 2px var(--accent-blue);
         }
 
         .theme-toggle-btn {
@@ -342,7 +372,7 @@
             grid-column: span 2;
         }
 
-        /* ── SEZIONE SPONSOR NEL FOOTER CON IMMAGINI REALI ── */
+        /* ── SEZIONE SPONSOR NEL FOOTER ── */
         .ads-footer-container {
             max-width: 600px;
             margin: 30px auto 10px auto;
@@ -394,347 +424,4 @@
         .ad-title {
             font-size: 1.05rem;
             font-weight: 800;
-            color: var(--primary-blue);
-            margin-bottom: 4px;
-        }
-
-        body.dark-mode .ad-title {
-            color: #38bdf8;
-        }
-
-        .ad-text {
-            font-size: 0.82rem;
-            opacity: 0.85;
-            margin-bottom: 12px;
-            line-height: 1.35;
-        }
-
-        .ad-cta-btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-            background: var(--primary-blue);
-            color: white;
-            text-decoration: none;
-            padding: 8px 18px;
-            border-radius: 10px;
-            font-size: 0.78rem;
-            font-weight: 700;
-            transition: opacity 0.2s;
-        }
-
-        .ad-cta-btn:hover {
-            opacity: 0.9;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 20px;
-            opacity: 0.6;
-            font-size: 0.78rem;
-        }
-    </style>
-</head>
-<body>
-
-    <div class="top-bar">
-        <button class="theme-toggle-btn" onclick="toggleDarkMode()">
-            <i class="fa-solid fa-moon" id="theme-icon"></i> Modalità Scura
-        </button>
-    </div>
-
-    <header>
-        <div class="mascot-container">
-            <div class="mascot-avatar">
-                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
-                    <circle cx="50" cy="52" r="38" fill="#d97706"/>
-                    <circle cx="50" cy="50" r="32" fill="#fbbf24"/>
-                    <circle cx="28" cy="32" r="12" fill="#d97706"/>
-                    <circle cx="28" cy="32" r="7" fill="#fde68a"/>
-                    <circle cx="72" cy="32" r="12" fill="#d97706"/>
-                    <circle cx="72" cy="32" r="7" fill="#fde68a"/>
-                    <circle cx="50" cy="54" r="24" fill="#fef3c7"/>
-                    <ellipse cx="50" cy="62" rx="10" ry="8" fill="#fef9c3"/>
-                    <polygon points="46,58 54,58 50,63" fill="#1e293b"/>
-                    <path d="M 46 66 Q 50 70 54 66" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
-                    <rect x="34" y="42" width="14" height="12" rx="3" fill="#002D62"/>
-                    <rect x="52" y="42" width="14" height="12" rx="3" fill="#002D62"/>
-                    <line x1="48" y1="46" x2="52" y2="46" stroke="#002D62" stroke-width="3"/>
-                    <line x1="36" y1="44" x2="42" y2="50" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
-                    <line x1="54" y1="44" x2="60" y2="50" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
-                </svg>
-            </div>
-        </div>
-        <h1>BRIXIA<span>OUT</span></h1>
-        <p>Il radar intelligente per le serate a Brescia e provincia</p>
-        
-        <div class="live-widget">
-            <span><i class="fa-solid fa-temperature-three-quarters"></i> Brescia 22°C</span>
-            <span><i class="fa-solid fa-sun"></i> Tramonto 20:15</span>
-        </div>
-    </header>
-
-    <div class="container">
-        
-        <div class="filter-section-title">📍 Scegli la Zona</div>
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterEvents('all', this, 'zone')">Tutti</button>
-            <button class="filter-btn" onclick="filterEvents('arnaldo', this, 'zone')">P.le Arnaldo & Centro</button>
-            <button class="filter-btn" onclick="filterEvents('franciacorta', this, 'zone')">Franciacorta</button>
-            <button class="filter-btn" onclick="filterEvents('iseo', this, 'zone')">Lago d'Iseo</button>
-            <button class="filter-btn" onclick="filterEvents('garda', this, 'zone')">Lago di Garda</button>
-        </div>
-
-        <div class="filter-section-title">🎵 Genere Musicale & Vibe</div>
-        <div class="filters">
-            <button class="filter-btn active" onclick="filterEvents('all', this, 'music')">Qualsiasi Vibe</button>
-            <button class="filter-btn" onclick="filterEvents('commerciale', this, 'music')">Commerciale / Reggaeton</button>
-            <button class="filter-btn" onclick="filterEvents('house', this, 'music')">House / Techno</button>
-            <button class="filter-btn" onclick="filterEvents('aperitivo', this, 'music')">Aperitivo & Chill</button>
-        </div>
-
-        <div id="events-list">
-            
-            <!-- Arnold's Cafè -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
-                    <span class="trend-badge">🔥 Hot Spot</span>
-                    <img src="https://images.unsplash.com/photo-1514933651103-005eec06c04b?auto=format&fit=crop&w=600&q=80" alt="Arnold's Cafè">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Arnold's Cafè</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Piazzale Arnaldo, Brescia</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Commerciale</span>
-                        <span class="music-tag">Pre-serata</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 142 persone interessate stasera</div>
-                    <p class="event-desc">Il punto di riferimento per l'aperitivo e la movida in Piazzale Arnaldo. Dj set e cocktail unici.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Ciao,%20info%20tavolo%20Arnold's%20Cafè" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Tavolo / Lista
-                        </a>
-                        <a href="https://maps.google.com/?q=Piazzale+Arnaldo+Brescia" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/arnolds.cafe" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Vedi Locandine su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Arnold\'s Cafè', 'Piazzale Arnaldo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Darsena 21 -->
-            <div class="event-card" data-category="iseo" data-music="house">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-sailboat"></i> Lago d'Iseo</span>
-                    <span class="trend-badge">🔥 Top Location</span>
-                    <img src="https://images.unsplash.com/photo-1533105079780-92b9be482077?auto=format&fit=crop&w=600&q=80" alt="Darsena 21 Iseo">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Darsena21</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Lago d'Iseo (BS)</p>
-                    <div class="tags-row">
-                        <span class="music-tag">House / Sunset</span>
-                        <span class="music-tag">Lago</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 180 persone interessate stasera</div>
-                    <p class="event-desc">Il locale cult sul Lago d'Iseo per aperitivi al tramonto, musica e serate in riva all'acqua.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Info%20tavoli%20Darsena21" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Prenota Tavolo
-                        </a>
-                        <a href="https://maps.google.com/?q=Darsena21+Iseo" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/darsena21" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Guarda Locandine su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Darsena21', 'Lago d\'Iseo')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-            <!-- Coco Beach Club -->
-            <div class="event-card" data-category="garda" data-music="commerciale">
-                <div class="event-img-container">
-                    <span class="zone-badge"><i class="fa-solid fa-water"></i> Lago di Garda</span>
-                    <span class="trend-badge">🌊 Must Visit</span>
-                    <img src="https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=600&q=80" alt="Coco Beach Club">
-                </div>
-                <div class="event-content">
-                    <h3 class="event-title">Coco Beach Club</h3>
-                    <p class="event-location"><i class="fa-solid fa-location-dot"></i> Desenzano del Garda (BS)</p>
-                    <div class="tags-row">
-                        <span class="music-tag">Commerciale / Club</span>
-                        <span class="music-tag">Dinner Show</span>
-                    </div>
-                    <div class="hype-counter"><i class="fa-solid fa-fire"></i> 230 persone interessate stasera</div>
-                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set.</p>
-                    <div class="action-buttons">
-                        <a href="https://wa.me/?text=Info%20tavoli%20Coco%20Beach" target="_blank" class="btn-action whatsapp-btn">
-                            <i class="fa-brands fa-whatsapp"></i> Tavoli & Liste
-                        </a>
-                        <a href="https://maps.google.com/?q=Coco+Beach+Club+Desenzano" target="_blank" class="btn-action maps-btn">
-                            <i class="fa-solid fa-map-location-dot"></i> Mappa
-                        </a>
-                    </div>
-                    <a href="https://www.instagram.com/cocobeach_club" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG
-                    </a>
-                    <button class="btn-action share-story-btn" onclick="shareStory('Coco Beach Club', 'Lago di Garda')">
-                        <i class="fa-solid fa-share-nodes"></i> Condividi in Story (IG/TikTok)
-                    </button>
-                </div>
-            </div>
-
-        </div>
-    </div>
-
-    <!-- Banner Sponsor Dinamico con Immagini Reali (Footer) -->
-    <div class="ads-footer-container">
-        <div class="ad-card" id="dynamic-ad-card">
-            <div class="ad-img-wrapper">
-                <span class="ad-sponsor-badge"><i class="fa-solid fa-star"></i> Sponsor Ufficiale</span>
-                <img id="ad-img" src="" alt="Sponsor Image">
-            </div>
-            <div class="ad-body">
-                <h4 class="ad-title" id="ad-title">Caricamento...</h4>
-                <p class="ad-text" id="ad-text">Caricamento offerta...</p>
-                <a href="#" class="ad-cta-btn" id="ad-link" target="_blank"><i class="fa-solid fa-arrow-up-right-from-square"></i> Scopri l'offerta</a>
-            </div>
-        </div>
-    </div>
-
-    <footer>
-        <p>&copy; 2026 BRIXIAOUT App - Tutti i diritti riservati</p>
-    </footer>
-
-    <script>
-        // Pool di Sponsor con immagini reali (Gruppo Bossoni, Franciacorta, Brescia Mobilità)
-        const adsPool = [
-            {
-                title: "Gruppo Bossoni Auto",
-                text: "Gamma Fiat, Jeep & Alfa Romeo ideale per i tuoi weekend in Franciacorta e sui laghi. Passa in concessionaria a Brescia!",
-                img: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80",
-                link: "https://www.gruppobossoni.it"
-            },
-            {
-                title: "Brescia Mobilità - Night Line",
-                text: "Muoviti sicuro in centro e verso Piazzale Arnaldo. Metro e bus potenziati per le tue serate del weekend.",
-                img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80",
-                link: "https://www.bresciamobilita.it"
-            },
-            {
-                title: "Consorzio Franciacorta",
-                text: "Vivi l'eleganza delle bollicine più famose d'Italia. Prenota il tuo tour esclusivo tra i filari.",
-                img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80",
-                link: "https://www.franciacorta.net"
-            },
-            {
-                title: "Gruppo Bossoni Outlet KM0",
-                text: "Le migliori auto aziendali e KM0 selezionate per i giovani driver di Brescia, Cremona e Mantova.",
-                img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&w=600&q=80",
-                link: "https://www.gruppobossoni.it"
-            }
-        ];
-
-        let currentAdIndex = 0;
-
-        function rotateAds() {
-            const adTitleEl = document.getElementById('ad-title');
-            const adTextEl = document.getElementById('ad-text');
-            const adImgEl = document.getElementById('ad-img');
-            const adLinkEl = document.getElementById('ad-link');
-            
-            const card = document.getElementById('dynamic-ad-card');
-            card.style.opacity = '0.3';
-
-            setTimeout(() => {
-                const currentAd = adsPool[currentAdIndex];
-                adTitleEl.textContent = currentAd.title;
-                adTextEl.textContent = currentAd.text;
-                adImgEl.src = currentAd.img;
-                adLinkEl.href = currentAd.link;
-                card.style.opacity = '1';
-
-                currentAdIndex = (currentAdIndex + 1) % adsPool.length;
-            }, 300);
-        }
-
-        // Rotazione automatica degli sponsor ogni 4,5 secondi
-        setInterval(rotateAds, 4500);
-        window.onload = rotateAds;
-
-
-        // Gestione filtri eventi
-        let currentZone = 'all';
-        let currentMusic = 'all';
-
-        function filterEvents(value, btn, type) {
-            const parentContainer = btn.parentElement;
-            parentContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            if (type === 'zone') currentZone = value;
-            if (type === 'music') currentMusic = value;
-
-            const cards = document.querySelectorAll('.event-card');
-            cards.forEach(card => {
-                const cardZone = card.dataset.category;
-                const cardMusic = card.dataset.music;
-
-                const matchZone = (currentZone === 'all' || cardZone === currentZone);
-                const matchMusic = (currentMusic === 'all' || cardMusic === currentMusic);
-
-                if (matchZone && matchMusic) {
-                    card.style.display = 'block';
-                } else {
-                    card.style.display = 'none';
-                }
-            });
-        }
-
-        // Dark Mode Toggle
-        function toggleDarkMode() {
-            document.body.classList.toggle('dark-mode');
-            const icon = document.getElementById('theme-icon');
-            if (document.body.classList.contains('dark-mode')) {
-                icon.classList.remove('fa-moon');
-                icon.classList.add('fa-sun');
-            } else {
-                icon.classList.remove('fa-sun');
-                icon.classList.add('fa-moon');
-            }
-        }
-
-        // Condivisione Story
-        function shareStory(clubName, zone) {
-            const shareText = `Stasera si va da ${clubName} (${zone})! 🔥 Scopri gli eventi su BRIXIAOUT 🚀`;
-            if (navigator.clipboard) {
-                navigator.clipboard.writeText(shareText).then(() => {
-                    alert('📋 Testo copiato! Incollalo ora nelle tue Stories di Instagram o TikTok.');
-                });
-            } else {
-                alert(shareText);
-            }
-        }
-
-        // Service Worker PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker PWA attivo!', reg))
-                    .catch(err => console.log('Errore Service Worker:', err));
-            });
-        }
-    </script>
-</body>
-</html>
+            color: var(--primary-
