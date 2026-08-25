@@ -239,7 +239,7 @@
     </header>
 
     <div class="container">
-        <!-- Filtri per zona aggiornati -->
+        <!-- Filtri zona -->
         <div class="filters">
             <button class="filter-btn active" onclick="filterEvents('all')">Tutti</button>
             <button class="filter-btn" onclick="filterEvents('arnaldo')">P.le Arnaldo & Centro</button>
@@ -382,7 +382,7 @@
                 <div class="event-content">
                     <h3 class="event-title">Contadi Castaldi & Cantine Franciacorta</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Adro / Franciacorta (BS)</p>
-                    <p class="event-desc">Aperitivi d'élite tra i filari, degustazioni di bollicine iconiche ed eventi esclusivi nel cuore della Franciacorta.</p>
+                    <p class="event-desc">Aperitivi d'élite tra i filari, degustazioni di bollicine iconiche ed eventi esclusivi.</p>
                     <div class="action-buttons">
                         <a href="https://wa.me/?text=Info%20degustazioni%20e%20eventi%20Franciacorta" target="_blank" class="btn-action whatsapp-btn">
                             <i class="fa-brands fa-whatsapp"></i> Prenota Tasting
@@ -407,7 +407,7 @@
                 <div class="event-content">
                     <h3 class="event-title">Darsena21</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Lago d'Iseo (BS)</p>
-                    <p class="event-desc">Il locale cult sul Lago d'Iseo per aperitivi al tramonto, musica e serate uniche in riva all'acqua[span_1](start_span)[span_1](end_span).</p>
+                    <p class="event-desc">Il locale cult sul Lago d'Iseo per aperitivi al tramonto, musica e serate in riva all'acqua[span_0](start_span)[span_0](end_span).</p>
                     <div class="action-buttons">
                         <a href="https://wa.me/?text=Info%20tavoli%20Darsena21%20Iseo" target="_blank" class="btn-action whatsapp-btn">
                             <i class="fa-brands fa-whatsapp"></i> Prenota Tavolo
@@ -417,7 +417,7 @@
                         </a>
                     </div>
                     <a href="https://www.instagram.com/darsena21" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Guarda Locandine su IG[span_2](start_span)[span_2](end_span)
+                        <i class="fa-brands fa-instagram"></i> Guarda Locandine su IG[span_1](start_span)[span_1](end_span)
                     </a>
                 </div>
             </div>
@@ -432,7 +432,7 @@
                 <div class="event-content">
                     <h3 class="event-title">Coco Beach Club</h3>
                     <p class="event-location"><i class="fa-solid fa-location-dot"></i> Desenzano del Garda (BS)</p>
-                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set della riviera[span_3](start_span)[span_3](end_span).</p>
+                    <p class="event-desc">Dinner show, musica e aperitivi esclusivi in riva al lago con i migliori DJ set[span_2](start_span)[span_2](end_span).</p>
                     <div class="action-buttons">
                         <a href="https://wa.me/?text=Info%20tavoli%20e%20liste%20Coco%20Beach%20Desenzano" target="_blank" class="btn-action whatsapp-btn">
                             <i class="fa-brands fa-whatsapp"></i> Tavoli & Liste
@@ -442,7 +442,7 @@
                         </a>
                     </div>
                     <a href="https://www.instagram.com/cocobeach_club" target="_blank" class="btn-action insta-btn">
-                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG[span_4](start_span)[span_4](end_span)
+                        <i class="fa-brands fa-instagram"></i> Vedi Locandine ed Eventi su IG[span_3](start_span)[span_3](end_span)
                     </a>
                 </div>
             </div>
@@ -470,11 +470,12 @@
             });
         }
 
+        // Registrazione Service Worker per abilitare la PWA
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('./sw.js')
-                    .then(reg => console.log('Service Worker registrato con successo!', reg))
-                    .catch(err => console.log('Registrazione Service Worker fallita:', err));
+                    .then(reg => console.log('Service Worker PWA attivo!', reg))
+                    .catch(err => console.log('Errore Service Worker:', err));
             });
         }
     </script>
