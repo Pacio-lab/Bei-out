@@ -52,29 +52,37 @@
             position: relative;
         }
 
-        /* Stile Mascotte Leonessa */
+        /* Stile Mascotte Cartoon */
         .mascot-container {
             display: flex;
             justify-content: center;
             align-items: center;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
 
         .mascot-avatar {
-            width: 75px;
-            height: 75px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
             border: 3px solid var(--pure-white);
-            object-fit: cover;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            background: linear-gradient(135deg, #e0f2fe, #bae6fd);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.25);
             animation: waveAnimation 2s infinite ease-in-out;
-            background-color: #fff;
+            overflow: hidden;
+        }
+
+        .mascot-avatar svg {
+            width: 55px;
+            height: 55px;
         }
 
         @keyframes waveAnimation {
-            0%, 100% { transform: rotate(0deg); }
-            25% { transform: rotate(8deg); }
-            75% { transform: rotate(-8deg); }
+            0%, 100% { transform: rotate(0deg) scale(1); }
+            25% { transform: rotate(6deg) scale(1.05); }
+            75% { transform: rotate(-6deg) scale(1.05); }
         }
 
         header h1 {
@@ -260,16 +268,41 @@
 <body>
 
     <header>
-        <!-- Mascotte Leonessa Vestita Bene -->
+        <!-- Mascotte Leonessa Cartoon Stilosa -->
         <div class="mascot-container">
-            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=200&q=80" alt="Leonessa BrixiaOut" class="mascot-avatar">
+            <div class="mascot-avatar">
+                <!-- Disegno vettoriale stile cartoon di una leonessa alla moda con occhiali da sole e sorriso -->
+                <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+                    <!-- Sfondo criniera leonessa -->
+                    <circle cx="50" cy="52" r="38" fill="#d97706"/>
+                    <circle cx="50" cy="50" r="32" fill="#fbbf24"/>
+                    <!-- Orecchie -->
+                    <circle cx="28" cy="32" r="12" fill="#d97706"/>
+                    <circle cx="28" cy="32" r="7" fill="#fde68a"/>
+                    <circle cx="72" cy="32" r="12" fill="#d97706"/>
+                    <circle cx="72" cy="32" r="7" fill="#fde68a"/>
+                    <!-- Faccia -->
+                    <circle cx="50" cy="54" r="24" fill="#fef3c7"/>
+                    <!-- Muso -->
+                    <ellipse cx="50" cy="62" rx="10" ry="8" fill="#fef9c3"/>
+                    <polygon points="46,58 54,58 50,63" fill="#1e293b"/>
+                    <path d="M 46 66 Q 50 70 54 66" stroke="#1e293b" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+                    <!-- Occhiali da sole stilosi (fashion) -->
+                    <rect x="34" y="42" width="14" height="12" rx="3" fill="#002D62"/>
+                    <rect x="52" y="42" width="14" height="12" rx="3" fill="#002D62"/>
+                    <line x1="48" y1="46" x2="52" y2="46" stroke="#002D62" stroke-width="3"/>
+                    <!-- Riflesso occhiali -->
+                    <line x1="36" y1="44" x2="42" y2="50" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                    <line x1="54" y1="44" x2="60" y2="50" stroke="#60a5fa" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+            </div>
         </div>
         <h1>BRIXIA<span>OUT</span></h1>
         <p>Pronti per il weekend? Scegli dove svoltare la serata!</p>
     </header>
 
     <div class="container">
-        <!-- Filtri zona -->
+        <!-- Filtri zone -->
         <div class="filters">
             <button class="filter-btn active" onclick="filterEvents('all')">Tutti</button>
             <button class="filter-btn" onclick="filterEvents('arnaldo')">P.le Arnaldo & Centro</button>
