@@ -233,6 +233,7 @@ const translations = {
     }
 };
 
+// Pool completo con tutti gli sponsor richiesti
 const adsPool = [
     {
         title: "Gruppo Bossoni Auto",
@@ -242,18 +243,18 @@ const adsPool = [
         link: "https://www.gruppobossoni.it"
     },
     {
+        title: "Cantine Contadi Castaldi",
+        textIt: "Il cuore pulsante della Franciacorta. L'eleganza delle bollicine perfetto abbinamento per le tue serate.",
+        textEn: "The beating heart of Franciacorta. Elegant sparkling wine, the perfect match for your nights out.",
+        img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80",
+        link: "https://www.contadicastaldi.it"
+    },
+    {
         title: "Brescia Mobilità - Night Line",
         textIt: "Muoviti sicuro in centro, Carmine e Piazzale Arnaldo. Metro e bus potenziati per le tue serate del weekend.",
         textEn: "Move safely in the center, Carmine and Piazzale Arnaldo. Enhanced metro and buses for your weekend nights.",
         img: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&w=600&q=80",
         link: "https://www.bresciamobilita.it"
-    },
-    {
-        title: "Consorzio Franciacorta",
-        textIt: "Vivi l'eleganza delle bollicine più famose d'Italia. Prenota il tuo tour esclusivo tra i filari.",
-        textEn: "Experience the elegance of Italy's most famous bubbles. Book your exclusive tour among the vineyards.",
-        img: "https://images.unsplash.com/photo-1506377247377-2a5b3b417ebb?auto=format&fit=crop&w=600&q=80",
-        link: "https://www.franciacorta.net"
     }
 ];
 
@@ -291,7 +292,6 @@ function updateTexts() {
     document.getElementById('btn-m-live').textContent = t.musicLive;
     document.getElementById('btn-m-aperitivo').textContent = t.musicAperitivo;
 
-    // Descrizioni locali
     document.getElementById('desc-carmen').textContent = t.carmenDesc;
     document.getElementById('desc-arnolds').textContent = t.arnoldsDesc;
     document.getElementById('desc-darsena').textContent = t.darsenaDesc;
@@ -334,8 +334,8 @@ function rotateAds() {
         adImgEl.src = currentAd.img;
         adLinkEl.href = currentAd.link;
         card.style.opacity = '1';
-        card.style.display = 'block';
 
+        // Passa al prossimo sponsor in modo circolare
         currentAdIndex = (currentAdIndex + 1) % adsPool.length;
     }, 300);
 }
@@ -343,7 +343,9 @@ function rotateAds() {
 function updateSponsorText() {
     const adTextEl = document.getElementById('ad-text');
     if(adTextEl) {
-        const currentAd = adsPool[(currentAdIndex - 1 + adsPool.length) % adsPool.length];
+        // Mostra il testo corretto dello sponsor attuale in base alla lingua
+        const activeIndex = (currentAdIndex - 1 + adsPool.length) % adsPool.length;
+        const currentAd = adsPool[activeIndex];
         adTextEl.textContent = (currentLang === 'en') ? currentAd.textEn : currentAd.textIt;
     }
 }
@@ -389,8 +391,10 @@ function shareStory(clubName, zone) {
 }
 
 window.onload = function() {
+    // Esegue subito il primo caricamento dello sponsor
     rotateAds();
-    setInterval(rotateAds, 5000);
+    // Avvia la rotazione automatica ogni 4,5 secondi
+    setInterval(rotateAds, 4500);
     
     if ('serviceWorker' in navigator) {
         navigator.serviceWorker.register('./sw.js')
