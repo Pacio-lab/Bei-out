@@ -291,6 +291,7 @@ function updateTexts() {
     document.getElementById('btn-m-live').textContent = t.musicLive;
     document.getElementById('btn-m-aperitivo').textContent = t.musicAperitivo;
 
+    // Descrizioni locali
     document.getElementById('desc-carmen').textContent = t.carmenDesc;
     document.getElementById('desc-arnolds').textContent = t.arnoldsDesc;
     document.getElementById('desc-darsena').textContent = t.darsenaDesc;
