@@ -511,27 +511,18 @@
         
         <div class="filter-section-title" id="txt-zone-title">📍 Scegli la Zona</div>
         <div class="filters">
-            <button class="filter-btn active" id="btn-z-all" onclick="filterEvents('all', this, 'zone')">Tutti</button>
-            <button class="filter-btn" id="btn-z-arnaldo" onclick="filterEvents('arnaldo', this, 'zone')">P.le Arnaldo & Centro</button>
-            <button class="filter-btn" id="btn-z-carmine" onclick="filterEvents('carmine', this, 'zone')">Carmine & S. Faustino</button>
-            <button class="filter-btn" id="btn-z-franciacorta" onclick="filterEvents('franciacorta', this, 'zone')">Franciacorta</button>
-            <button class="filter-btn" id="btn-z-iseo" onclick="filterEvents('iseo', this, 'zone')">Lago d'Iseo</button>
-            <button class="filter-btn" id="btn-z-garda" onclick="filterEvents('garda', this, 'zone')">Lago di Garda</button>
-        </div>
-
-        <div class="filter-section-title" id="txt-music-title">🎵 Genere Musicale & Vibe</div>
-        <div class="filters">
-            <button class="filter-btn active" id="btn-m-all" onclick="filterEvents('all', this, 'music')">Qualsiasi Vibe</button>
-            <button class="filter-btn" id="btn-m-comm" onclick="filterEvents('commerciale', this, 'music')">Commerciale / Reggaeton</button>
-            <button class="filter-btn" id="btn-m-house" onclick="filterEvents('house', this, 'music')">House / Techno</button>
-            <button class="filter-btn" id="btn-m-live" onclick="filterEvents('live', this, 'music')">Live Music & Indie</button>
-            <button class="filter-btn" id="btn-m-aperitivo" onclick="filterEvents('aperitivo', this, 'music')">Aperitivo & Chill</button>
+            <button class="filter-btn active" id="btn-z-all" onclick="filterEvents('all', this)">Tutti</button>
+            <button class="filter-btn" id="btn-z-arnaldo" onclick="filterEvents('arnaldo', this)">P.le Arnaldo & Centro</button>
+            <button class="filter-btn" id="btn-z-carmine" onclick="filterEvents('carmine', this)">Carmine & S. Faustino</button>
+            <button class="filter-btn" id="btn-z-franciacorta" onclick="filterEvents('franciacorta', this)">Franciacorta</button>
+            <button class="filter-btn" id="btn-z-iseo" onclick="filterEvents('iseo', this)">Lago d'Iseo</button>
+            <button class="filter-btn" id="btn-z-garda" onclick="filterEvents('garda', this)">Lago di Garda</button>
         </div>
 
         <div id="events-list">
             
             <!-- Kacao -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
                     <span class="trend-badge">🔥 Hot Spot</span>
@@ -553,7 +544,7 @@
             </div>
 
             <!-- Arnold's Cafè -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Piazzale Arnaldo</span>
                     <span class="trend-badge">🔥 Arnaldo Top</span>
@@ -575,7 +566,7 @@
             </div>
 
             <!-- Vita -->
-            <div class="event-card" data-category="arnaldo" data-music="aperitivo">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
                     <span class="trend-badge">✨ Vibe Chill</span>
@@ -597,7 +588,7 @@
             </div>
 
             <!-- Granaio -->
-            <div class="event-card" data-category="arnaldo" data-music="aperitivo">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Piazzale Arnaldo</span>
                     <span class="trend-badge">🥖 Storico</span>
@@ -619,7 +610,7 @@
             </div>
 
             <!-- Hope Bar -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-location-dot"></i> Via Trieste</span>
                     <span class="trend-badge">⭐ Trendy</span>
@@ -641,7 +632,7 @@
             </div>
 
             <!-- Belle Epoque -->
-            <div class="event-card" data-category="arnaldo" data-music="aperitivo">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
                     <span class="trend-badge">🍷 Classic</span>
@@ -663,7 +654,7 @@
             </div>
 
             <!-- Marlin Cafe -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Piazzale Arnaldo</span>
                     <span class="trend-badge">⚓ Movida</span>
@@ -685,7 +676,7 @@
             </div>
 
             <!-- Rita -->
-            <div class="event-card" data-category="arnaldo" data-music="aperitivo">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
                     <span class="trend-badge">🍹 Cool Spot</span>
@@ -707,7 +698,7 @@
             </div>
 
             <!-- Impero -->
-            <div class="event-card" data-category="arnaldo" data-music="commerciale">
+            <div class="event-card" data-category="arnaldo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-martini-glass"></i> Brescia Centro</span>
                     <span class="trend-badge">👑 Nightlife</span>
@@ -729,7 +720,7 @@
             </div>
 
             <!-- Carmen Town (Carmine) -->
-            <div class="event-card" data-category="carmine" data-music="live">
+            <div class="event-card" data-category="carmine">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-beer-mug-empty"></i> Carmine / S. Faustino</span>
                     <span class="trend-badge">🔥 Cult Spot</span>
@@ -751,7 +742,7 @@
             </div>
 
             <!-- Darsena 21 -->
-            <div class="event-card" data-category="iseo" data-music="house">
+            <div class="event-card" data-category="iseo">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-sailboat"></i> Lago d'Iseo</span>
                     <span class="trend-badge">🔥 Top Location</span>
@@ -773,7 +764,7 @@
             </div>
 
             <!-- Coco Beach Club -->
-            <div class="event-card" data-category="garda" data-music="commerciale">
+            <div class="event-card" data-category="garda">
                 <div class="event-img-container">
                     <span class="zone-badge"><i class="fa-solid fa-water"></i> Lago di Garda</span>
                     <span class="trend-badge">🌊 Must Visit</span>
@@ -824,18 +815,12 @@
                 temp: "Brescia 22°C",
                 sunset: "Tramonto 20:15",
                 zoneTitle: "📍 Scegli la Zona",
-                musicTitle: "🎵 Genere Musicale & Vibe",
                 allZones: "Tutti",
                 zoneArnaldo: "P.le Arnaldo & Centro",
                 zoneCarmine: "Carmine & S. Faustino",
                 zoneFranciacorta: "Franciacorta",
                 zoneIseo: "Lago d'Iseo",
                 zoneGarda: "Lago di Garda",
-                allMusic: "Qualsiasi Vibe",
-                musicComm: "Commerciale / Reggaeton",
-                musicHouse: "House / Techno",
-                musicLive: "Live Music & Indie",
-                musicAperitivo: "Aperitivo & Chill",
                 tableBtn: "Tavolo / Lista",
                 mapsBtn: "Mappa",
                 igBtn: "Vedi Locandine ed Eventi su IG",
@@ -852,18 +837,12 @@
                 temp: "Brescia 22°C",
                 sunset: "Sunset 8:15 PM",
                 zoneTitle: "📍 Select Area",
-                musicTitle: "🎵 Music Genre & Vibe",
                 allZones: "All",
                 zoneArnaldo: "Arnaldo Square & Center",
                 zoneCarmine: "Carmine & S. Faustino",
                 zoneFranciacorta: "Franciacorta",
                 zoneIseo: "Lake Iseo",
                 zoneGarda: "Lake Garda",
-                allMusic: "Any Vibe",
-                musicComm: "Commercial / Reggaeton",
-                musicHouse: "House / Techno",
-                musicLive: "Live Music & Indie",
-                musicAperitivo: "Aperitivo & Chill",
                 tableBtn: "Table / Guestlist",
                 mapsBtn: "Map",
                 igBtn: "Check Events & Flyers on IG",
@@ -880,18 +859,12 @@
                 temp: "Brescia 22°C",
                 sunset: "Puesta de sol 20:15",
                 zoneTitle: "📍 Seleccionar Zona",
-                musicTitle: "🎵 Género Musical y Vibe",
                 allZones: "Todos",
                 zoneArnaldo: "Pza. Arnaldo y Centro",
                 zoneCarmine: "Carmine y S. Faustino",
                 zoneFranciacorta: "Franciacorta",
                 zoneIseo: "Lago de Iseo",
                 zoneGarda: "Lago de Garda",
-                allMusic: "Cualquier Vibe",
-                musicComm: "Comercial / Reggaeton",
-                musicHouse: "House / Techno",
-                musicLive: "Música en Vivo e Indie",
-                musicAperitivo: "Aperitivo y Chill",
                 tableBtn: "Mesa / Lista",
                 mapsBtn: "Mapa",
                 igBtn: "Ver Eventos en IG",
@@ -908,18 +881,12 @@
                 temp: "Brescia 22°C",
                 sunset: "Coucher de soleil 20:15",
                 zoneTitle: "📍 Choisir la Zone",
-                musicTitle: "🎵 Genre Musical & Vibe",
                 allZones: "Tous",
                 zoneArnaldo: "P.le Arnaldo & Centre",
                 zoneCarmine: "Carmine & S. Faustino",
                 zoneFranciacorta: "Franciacorta",
                 zoneIseo: "Lac d'Iseo",
                 zoneGarda: "Lac de Garde",
-                allMusic: "Tous les Vibe",
-                musicComm: "Commercial / Reggaeton",
-                musicHouse: "House / Techno",
-                musicLive: "Live Music & Indie",
-                musicAperitivo: "Apéritif & Chill",
                 tableBtn: "Table / Liste",
                 mapsBtn: "Plan",
                 igBtn: "Voir les Événements sur IG",
@@ -936,18 +903,12 @@
                 temp: "Brescia 22°C",
                 sunset: "Sonnenuntergang 20:15",
                 zoneTitle: "📍 Gebiet wählen",
-                musicTitle: "🎵 Musikstil & Vibe",
                 allZones: "Alle",
                 zoneArnaldo: "P.le Arnaldo & Zentrum",
                 zoneCarmine: "Carmine & S. Faustino",
                 zoneFranciacorta: "Franciacorta",
                 zoneIseo: "Iseosee",
                 zoneGarda: "Gardasee",
-                allMusic: "Jeder Vibe",
-                musicComm: "Commercial / Reggaeton",
-                musicHouse: "House / Techno",
-                musicLive: "Live-Musik & Indie",
-                musicAperitivo: "Aperitif & Chill",
                 tableBtn: "Tisch / Gästeliste",
                 mapsBtn: "Karte",
                 igBtn: "Events auf IG ansehen",
@@ -964,18 +925,12 @@
                 temp: "布雷西亚 22°C",
                 sunset: "日落 20:15",
                 zoneTitle: "📍 选择区域",
-                musicTitle: "🎵 音乐风格与氛围",
                 allZones: "全部",
                 zoneArnaldo: "阿尔纳尔多广场与市中心",
                 zoneCarmine: "卡尔米内区",
                 zoneFranciacorta: "弗兰恰科塔",
                 zoneIseo: "伊塞奥湖",
                 zoneGarda: "加尔达湖",
-                allMusic: "所有氛围",
-                musicComm: "商业舞曲 / 雷鬼",
-                musicHouse: "浩室 / 电子",
-                musicLive: "现场音乐 & 独立",
-                musicAperitivo: "开胃酒 & 休闲",
                 tableBtn: "预定卡座 / 名单",
                 mapsBtn: "地图",
                 igBtn: "在 IG 上查看活动",
@@ -992,18 +947,12 @@
                 temp: "ブレシア 22°C",
                 sunset: "日没 20:15",
                 zoneTitle: "📍 エリアを選択",
-                musicTitle: "🎵 音楽ジャンル＆Vibe",
                 allZones: "すべて",
                 zoneArnaldo: "アルナルド広場＆中心街",
                 zoneCarmine: "カルマイン地区",
                 zoneFranciacorta: "フランチャコルタ",
                 zoneIseo: "イセオ湖",
                 zoneGarda: "ガルダ湖",
-                allMusic: "すべてのVibe",
-                musicComm: "商業音楽 / レゲトン",
-                musicHouse: "ハウス / テクノ",
-                musicLive: "ライブ & インディー",
-                musicAperitivo: "アペリティフ & チル",
                 tableBtn: "テーブル / ゲストリスト",
                 mapsBtn: "マップ",
                 igBtn: "IGでイベントを見る",
@@ -1043,7 +992,6 @@
 
         let currentLang = 'it';
         let currentZone = 'all';
-        let currentMusic = 'all';
         let currentAdIndex = 0;
 
         function changeLanguage(selectEl) {
@@ -1060,7 +1008,6 @@
             document.getElementById('txt-sunset').textContent = t.sunset;
             
             document.getElementById('txt-zone-title').textContent = t.zoneTitle;
-            document.getElementById('txt-music-title').textContent = t.musicTitle;
             
             document.getElementById('btn-z-all').textContent = t.allZones;
             document.getElementById('btn-z-arnaldo').textContent = t.zoneArnaldo;
@@ -1068,12 +1015,6 @@
             document.getElementById('btn-z-franciacorta').textContent = t.zoneFranciacorta;
             document.getElementById('btn-z-iseo').textContent = t.zoneIseo;
             document.getElementById('btn-z-garda').textContent = t.zoneGarda;
-
-            document.getElementById('btn-m-all').textContent = t.allMusic;
-            document.getElementById('btn-m-comm').textContent = t.musicComm;
-            document.getElementById('btn-m-house').textContent = t.musicHouse;
-            document.getElementById('btn-m-live').textContent = t.musicLive;
-            document.getElementById('btn-m-aperitivo').textContent = t.musicAperitivo;
 
             document.querySelectorAll('.txt-table').forEach(el => el.textContent = t.tableBtn);
             document.querySelectorAll('.txt-maps').forEach(el => el.textContent = t.mapsBtn);
@@ -1121,23 +1062,17 @@
             }
         }
 
-        function filterEvents(value, btn, type) {
+        function filterEvents(value, btn) {
             const parentContainer = btn.parentElement;
             parentContainer.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
             btn.classList.add('active');
 
-            if (type === 'zone') currentZone = value;
-            if (type === 'music') currentMusic = value;
+            currentZone = value;
 
             const cards = document.querySelectorAll('.event-card');
             cards.forEach(card => {
                 const cardZone = card.dataset.category;
-                const cardMusic = card.dataset.music;
-
-                const matchZone = (currentZone === 'all' || cardZone === currentZone);
-                const matchMusic = (currentMusic === 'all' || cardMusic === currentMusic);
-
-                if (matchZone && matchMusic) {
+                if (currentZone === 'all' || cardZone === currentZone) {
                     card.style.display = 'block';
                 } else {
                     card.style.display = 'none';
