@@ -360,7 +360,7 @@
             grid-column: span 2;
         }
 
-        /* ── SEZIONE SPONSOR NEL FOOTER ── */
+        /* ── SEZIONE SPONSOR NEL FOOTER (VISIBILE SUBITO) ── */
         .ads-footer-container {
             max-width: 600px;
             margin: 30px auto 10px auto;
@@ -374,7 +374,7 @@
             box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
             border: 2px solid rgba(0, 45, 98, 0.15);
             position: relative;
-            display: none; /* Gestito da JS */
+            display: block; /* Visibile fin da subito */
         }
 
         .ad-img-wrapper {
@@ -668,12 +668,12 @@
         <div class="ad-card" id="dynamic-ad-card">
             <div class="ad-img-wrapper">
                 <span class="ad-sponsor-badge" id="txt-sponsor-badge"><i class="fa-solid fa-star"></i> Sponsor Ufficiale</span>
-                <img id="ad-img" src="" alt="Sponsor Image">
+                <img id="ad-img" src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=600&q=80" alt="Sponsor Image">
             </div>
             <div class="ad-body">
-                <h4 class="ad-title" id="ad-title">Caricamento...</h4>
-                <p class="ad-text" id="ad-text">Caricamento offerta...</p>
-                <a href="#" class="ad-cta-btn" id="ad-link" target="_blank"><span id="txt-ad-cta"><i class="fa-solid fa-arrow-up-right-from-square"></i> Scopri l'offerta</span></a>
+                <h4 class="ad-title" id="ad-title">Gruppo Bossoni Auto</h4>
+                <p class="ad-text" id="ad-text">Gamma Fiat, Jeep & Alfa Romeo ideale per i tuoi weekend in Franciacorta e sui laghi. Passa in concessionaria a Brescia!</p>
+                <a href="https://www.gruppobossoni.it" class="ad-cta-btn" id="ad-link" target="_blank"><span id="txt-ad-cta"><i class="fa-solid fa-arrow-up-right-from-square"></i> Scopri l'offerta</span></a>
             </div>
         </div>
     </div>
